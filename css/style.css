@@ -1,0 +1,225 @@
+/* General Styling */
+body {
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+    margin: 5%;
+    background-color: #f5f5f5;
+    color: #000;
+    font-size: 18px;
+}
+
+nav ul li a.active {
+    color: red;
+    font-weight: bold;
+}
+
+header nav ul li.active a {
+    color: red;
+    font-weight: bold;
+}
+
+header {
+    font-size: 36px;
+    background-color: #000;
+    color: #53c3f2;
+    padding: 15px;
+}
+
+nav ul {
+    flex-direction: column;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: #53c3f2;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: block;
+    padding: 20px;
+}
+
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #000;
+    background-color: #53c3f2;
+    border: solid 2px #53c3f2;
+    font-family: "Helvetica", sans-serif;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+h2:hover {
+    background-color: #3671a5;
+}
+
+h3 {
+    color: #000;
+    font-size: 1.8em;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframe Animation */
+@keyframes exampleAnimation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(200px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Disable animation */
+    @keyframes exampleAnimation {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+}
+
+.animated-element {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    animation: exampleAnimation 2s infinite alternate;
+}
+
+/* Skip to Main Content Link */
+#skip-link {
+    position: fixed;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+nav ul li a[role='menuitem'].active,
+header nav ul li[role='menuitem'].active a {
+    color: red;
+    font-weight: bold;
+}
+
+/* Media Query for Small Screens */
+@media only screen and (min-width: 500px) {
+    body {
+        margin: 10%;
+    }
+
+    header {
+        font-size: 30px;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 10px;
+        font-size: 30px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 20px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+    .photo-gallery {
+        display: row;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+ /* Media Query for Desk View */
+
+ @media only screen and (min-width: 1024px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        padding: 20px;
+    }
+}
+
+    /* 增强图片和视频的大小，使其适应桌面浏览器 */
+    .photo-gallery img,
+    .photo-gallery video {
+        width: 100%;
+        height: auto;
+        max-height: 500px; /* 控制图片和视频的最大高度 */
+        margin: 0;
+        padding: 0;
+        align-self: end; /* 将图片和视频沿着垂直轴底部对齐 */
+    }
+
+
+
+    /* 使用网格布局来排列照片画廊的项目 */
+    .photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 三列等宽布局 */
+        grid-gap: 10px; /* 设置项目之间的间距 */
+        max-width: 800px; /* 限制画廊的最大宽度 */
+        margin: 0 auto; /* 水平居中 */
+    }
+
+    /* 调整照片画廊的段落样式 */
+    .photo-gallery p {
+        font-size: 20px; /* 调整段落字体大小 */
+        line-height: 30px; /* 调整段落行高 */
+        grid-row-start: 2; /* 将段落放置在网格的第二行 */
+    }

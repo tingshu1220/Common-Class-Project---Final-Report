@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Home</title>
+</head>
+<body>
+    <!-- Skip to Main Content Link -->
+    <a href="#main" id="skip-link" tabindex="0">Skip to Main Content</a>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="travel.html">Travel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main id="main">
+        <h1>Home</h1>
+
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <p>Welcome to SI 539, your go-to destination for all things pets, recipes, and travel! Explore a world of captivating content where we cater to your love for furry companions, culinary delights, and globetrotting adventures.</p>
+        </section>
+
+        <!-- Lexi's Introduction -->
+        <section class="lexi-intro">
+            <div>Hi, I am Lexi. Welcome to my world.</div>
+        </section>
+          </section>
+
+         <!-- 添加按钮元素 -->
+          <button id="changeColorBtn">Change Color</button>
+
+          <!-- 添加一个具有 'changeable-element' 类的元素 -->
+          <div class="changeable-element" style="width: 100px; height: 100px; background-color: #ccc; margin-top: 20px;"></div>
+    </main>
+
+    <!-- JavaScript 代码 -->
+    <script>
+        // 找到按钮元素
+        const changeColorBtn = document.getElementById('changeColorBtn');
+
+        // 添加点击事件监听器
+        changeColorBtn.addEventListener('click', function() {
+            // 找到要改变颜色的元素
+            const changeableElement = document.querySelector('.changeable-element');
+            
+            // 生成随机颜色
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            
+            // 改变元素背景颜色
+            changeableElement.style.backgroundColor = randomColor;
+        });
+    </script>
+
+</body>
+</html>
